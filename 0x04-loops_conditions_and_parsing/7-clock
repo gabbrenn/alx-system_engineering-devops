@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Initialize a hour
+hour=0
+while [ "$hour" -le 12 ]; do
+    echo "Hour: $hour"
+    #initialize a minute
+    minute=1
+    while [ "$minute" -le 59 ]; do
+        echo "$minute"
+        ((minute++))
+    done
+    ((hour++))
+done
