@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Find the PID of the 4-to_infinity_and_beyond process
-pid=$(pgrep 4-to_infinity_and_beyond)
 
-# Check if the process is running
+# Read the process ID from the file
+pid=$(cat /tmp/my_process.pid 2>/dev/null)
+
 if [ -n "$pid" ]; then
-    # Send the SIGKILL signal to forcefully stop the process
-    kill -9 "$pid"
-    echo "Process 4-to_infinity_and_beyond killed."
+    # Kill the process using SIGTERM
+    kill -15 "$pid"
+    echo "Termination signal sent to process $pid"
 else
-    echo "Process 4-to_infinity_and_beyond is not running."
+    echo "Could not find the process ID"
 fi
