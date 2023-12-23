@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 # Find the process ID of 4-to_infinity_and_beyond
-pid=$(pgrep -f "4-to_infinity_and_beyond")
-
-if [ -n "$pid" ]; then
-    # Kill the process using SIGKILL (-9)
-    kill -9 "$pid"
-    echo "Termination signal (SIGKILL) sent to process $pid"
-else
-    echo "Could not find the process ID"
+#to be killed
+number=$(pgrep -f 4-to_infinity_and_beyond)
+if [ -n "$number" ];then
+	kill "$number"
 fi
