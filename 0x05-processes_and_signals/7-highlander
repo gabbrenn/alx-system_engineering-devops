@@ -4,10 +4,10 @@ terminate() {
     echo "I am invincible!!!"
     exit 0
 }
-
+#disable an endless loop
 trap terminate SIGTERM
-
-while true; do
+i=0
+while [ "$i" -lt 5 ]; do
     echo "To infinity and beyond"
     sleep 2
 done
