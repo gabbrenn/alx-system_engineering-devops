@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-#disable the SIGTERM
-terminate() {
-    echo "I am invincible!!!"
-    exit 0
+#disabling the SIGTERM
+handle()
+{
+	echo "I am invincible!!!"
 }
-#disable an endless loop
-trap terminate SIGTERM
+trap handle SIGTERM
+#displaying an endless loop
 i=0
-while [ "$i" -lt 5 ]; do
-    echo "To infinity and beyond"
-    sleep 2
+while [ $i -lt 5 ]
+do
+        echo "To infinity and beyond"
+        sleep 2
 done
