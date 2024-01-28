@@ -1,0 +1,10 @@
+The design with 2 servers (Local DNS Server, External DNS Server) is a bit better than the previous one where there are ny ne server.
+
+Local DNS Server: It resolves domain names for internal resources, such as the web servers hosting internal applications or services, and forwards external DNS queries to external DNS servers for resolution.
+
+External DNS Server: It resolves domain names for publicly accessible websites, including the domain name associated with the organization's web infrastructure (e.g., www.foobar.com), and provides authoritative DNS responses to clients outside the organization's network.
+
+The need to add an additional server is due to if you have a one server it will lead to overloading the server since all the tasks needed to be done on the server side is done by that lone server.
+
+i.e: all hmtl requests, all database information retriaval is done by that server. which leads to late responses.
+	To handle that we introduce a new server to help in providing the database responces and a load balancer such that in case of heavy traffic the requests are 	eveny balanced.

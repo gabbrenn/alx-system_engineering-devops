@@ -1,0 +1,18 @@
+Firewalls: Firewalls are added to control and filter incoming and outgoing network traffic based on predetermined security rules. They act as a barrier between the internal network and external networks (such as the internet) to prevent unauthorized access and protect against malicious attacks.
+
+HTTPS Traffic: Serving traffic over HTTPS (HTTP Secure) ensures that data exchanged between the client and the server is encrypted, providing confidentiality and integrity. HTTPS is crucial for protecting sensitive information, such as login credentials, personal data, and financial transactions, from eavesdropping and tampering by malicious actors.
+
+Monitoring: Monitoring tools are used to track the performance, availability, and health of the web infrastructure components in real-time. They help detect and diagnose issues, optimize resource utilization, and ensure optimal performance and reliability of the system.
+
+Data Collection: Monitoring tools collect data by continuously monitoring various metrics, such as CPU usage, memory utilization, network traffic, response times, error rates, and system logs. They gather this data from servers, applications, databases, network devices, and other infrastructure components, providing insights into the overall health and performance of the system.
+
+Monitoring Web Server QPS:
+To monitor the Query Per Second (QPS) of the web server, you can use monitoring tools that support performance monitoring and analytics. These tools typically provide features to track web server metrics, such as request rate, response time, throughput, and error rates. By configuring monitoring alerts and dashboards, you can monitor the QPS in real-time and set thresholds for proactive alerting when QPS exceeds predefined limits.
+
+Issues with the Infrastructure:
+
+Terminating SSL at the Load Balancer Level: Terminating SSL at the load balancer exposes decrypted traffic within the internal network, potentially compromising data confidentiality. It also increases the load balancer's processing overhead and introduces a single point of failure for SSL termination.
+
+Single MySQL Server for Writes: Having only one MySQL server capable of accepting writes introduces a single point of failure and scalability bottleneck. If the MySQL server fails or becomes overloaded, it can lead to downtime and data loss. Additionally, it limits the system's ability to scale horizontally to handle increased write loads.
+
+Homogeneous Server Components: Having servers with identical components (database, web server, and application server) might be a problem because it lacks redundancy and fault tolerance. If a critical component fails, such as the database server, it can affect the entire system's availability and performance. Introducing diversity in server components and implementing redundancy can mitigate this risk.
