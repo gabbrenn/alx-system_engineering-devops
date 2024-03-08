@@ -34,11 +34,11 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend clickviral-tech-frontend
+frontend gabbrenn-tech-frontend
     bind *:80
-    default_backend clickviral-tech-backend
+    default_backend gabbrenn-tech-backend
 
-backend clickviral-tech-backend
+backend gabbrenn-tech-backend
     balance roundrobin
     server 323187-web-01 35.153.16.12:80 check
     server 323187-web-02 54.144.155.57:80 check
